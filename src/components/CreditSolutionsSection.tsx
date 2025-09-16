@@ -1,6 +1,3 @@
-// components/CreditSolutionsSection.tsx
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -131,32 +128,23 @@ const CreditSolutionsSection = () => {
     },
   ];
 
-  const categories = [...new Set(creditSolutions.map((s) => s.category))];
+  const categories = [
+    ...new Set(creditSolutions.map((solution) => solution.category)),
+  ];
 
   const filteredSolutions = selectedCategory
-    ? creditSolutions.filter((s) => s.category === selectedCategory)
+    ? creditSolutions.filter(
+        (solution) => solution.category === selectedCategory
+      )
     : creditSolutions;
 
-  const handleKey = (
-    e: React.KeyboardEvent<HTMLSpanElement>,
-    category: string | null
-  ) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      setSelectedCategory(category);
-    }
-  };
-
   return (
-    <section
-      id="credito"
-      className="py-20 bg-gradient-to-br from-background to-muted/20 scroll-mt-24"
-    >
+    <section id="credito" className="py-20 bg-bg-section-2">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Badge
-            variant="outline"
+            variant="warning"
             className="mb-4 px-4 py-2 text-sm font-medium"
           >
             Soluções de Crédito
@@ -174,34 +162,26 @@ const CreditSolutionsSection = () => {
         {/* Category filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in">
           <Badge
-            role="button"
-            tabIndex={0}
-            aria-pressed={selectedCategory === null}
-            onKeyDown={(e) => handleKey(e, null)}
-            onClick={() => setSelectedCategory(null)}
             variant={selectedCategory === null ? "secondary" : "outline"}
             className={`px-4 py-2 text-sm cursor-pointer transition-colors ${
               selectedCategory === null
                 ? "bg-primary text-primary-foreground"
                 : "hover:bg-primary/10"
             }`}
+            onClick={() => setSelectedCategory(null)}
           >
             Todas as Categorias
           </Badge>
           {categories.slice(0, 6).map((category) => (
             <Badge
               key={category}
-              role="button"
-              tabIndex={0}
-              aria-pressed={selectedCategory === category}
-              onKeyDown={(e) => handleKey(e, category)}
-              onClick={() => setSelectedCategory(category)}
               variant={selectedCategory === category ? "secondary" : "outline"}
               className={`px-4 py-2 text-sm cursor-pointer transition-colors ${
                 selectedCategory === category
                   ? "bg-primary text-primary-foreground"
                   : "hover:bg-primary/10"
               }`}
+              onClick={() => setSelectedCategory(category)}
             >
               {category}
             </Badge>
@@ -212,14 +192,14 @@ const CreditSolutionsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {filteredSolutions.map((solution, index) => (
             <Card
-              key={solution.title}
-              className="group relative overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:scale-105 animate-fade-in cursor-pointer"
+              key={index}
+              className={`group relative overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:scale-105 animate-fade-in cursor-pointer`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               {/* Background gradient */}
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${solution.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-              />
+              ></div>
 
               {/* Category badge */}
               <div className="absolute top-3 right-3 z-10">
@@ -251,10 +231,6 @@ const CreditSolutionsSection = () => {
                   variant="ghost"
                   size="sm"
                   className="w-full text-primary hover:text-primary-foreground hover:bg-primary transition-all duration-300 group/btn"
-                  onClick={() => {
-                    const el = document.querySelector("#contato");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
                 >
                   Saiba Mais
                   <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -322,8 +298,10 @@ const CreditSolutionsSection = () => {
             <div className="space-y-4">
               <Button
                 onClick={() => {
-                  const el = document.querySelector("#contato");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                  const element = document.querySelector("#contato");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
                 }}
                 size="lg"
                 className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"

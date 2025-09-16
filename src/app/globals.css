@@ -2,200 +2,238 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Variant dark de atalho do seu template Next */
+/* Variant dark */
 @custom-variant dark (&:is(.dark *));
 
-/* Expondo tokens para o Tailwind v4 (inclui nossos extras) */
+/* Expondo tokens para o Tailwind v4 (TODAS as cores mapeadas com hsl(...)) */
 @theme inline {
-  /* mapeia tokens Tailwind -> CSS vars */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Core */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
 
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-  /* 🔸 acrescentamos WARNING para bater com seus componentes */
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
 
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-destructive: hsl(var(--destructive));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 
-  /* fontes do template Next (se estiver usando) */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
-  /* sidebar + charts do template Next (mantidos) */
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  /* 🔹 cores de marca para usar com from-first-blue / to-first-blue */
+  /* 🔹 Cores de marca (para from-first-blue, to-first-blue, etc.) */
   --color-first-blue: hsl(var(--first-blue));
+  --color-first-blue-light: hsl(var(--first-blue-light));
   --color-first-blue-dark: hsl(var(--first-blue-dark));
-  --color-first-yellow: hsl(var(--first-yellow));
-  --color-first-yellow-dark: hsl(var(--first-yellow-dark));
+  --color-first-blue-deeper: hsl(var(--first-blue-deeper));
 
-  /* raios */
+  --color-first-yellow: hsl(var(--first-yellow));
+  --color-first-yellow-light: hsl(var(--first-yellow-light));
+  --color-first-yellow-dark: hsl(var(--first-yellow-dark));
+  --color-first-yellow-deeper: hsl(var(--first-yellow-deeper));
+
+  /* Acentos profissionais */
+  --color-emerald: hsl(var(--emerald));
+  --color-emerald-light: hsl(var(--emerald-light));
+  --color-teal: hsl(var(--teal));
+  --color-purple: hsl(var(--purple));
+  --color-orange: hsl(var(--orange));
+
+  /* Raios */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* === Design System (Lovable) – HSL dentro das vars === */
-:root {
-  --radius: 0.625rem;
+/* === Design System (Lovable) – valores como NÚMEROS HSL === */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 221 39% 28%;
 
-  /* Paleta base (HSL) */
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(221 39% 28%);
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 28%;
 
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(221 39% 28%);
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 39% 28%;
 
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(221 39% 28%);
+    --primary: 205 100% 32%;
+    --primary-foreground: 0 0% 98%;
 
-  --primary: hsl(205 100% 32%); /* FIRST blue */
-  --primary-foreground: hsl(0 0% 98%);
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 221 39% 28%;
 
-  --secondary: hsl(0 0% 96%);
-  --secondary-foreground: hsl(221 39% 28%);
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-  --muted: hsl(210 40% 96%);
-  --muted-foreground: hsl(215 16% 47%);
+    --accent: 48 89% 56%;
+    --accent-foreground: 221 39% 28%;
 
-  --accent: hsl(48 89% 56%); /* FIRST yellow */
-  --accent-foreground: hsl(221 39% 28%);
+    --warning: 46 84% 53%;
+    --warning-foreground: 221 39% 28%;
 
-  --warning: hsl(46 84% 53%);
-  --warning-foreground: hsl(221 39% 28%);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-  --destructive: hsl(0 84% 60%);
-  --destructive-foreground: hsl(0 0% 98%);
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 205 100% 32%;
 
-  --border: hsl(214 32% 91%);
-  --input: hsl(214 32% 91%);
-  --ring: hsl(205 100% 32%);
+    /* 🔸 FIRST brand (paleta aprimorada) */
+    --first-blue: 205 100% 32%;
+    --first-blue-light: 205 85% 45%;
+    --first-blue-dark: 221 39% 28%;
+    --first-blue-deeper: 225 50% 20%;
 
-  /* 🔹 Brand extras para gradients utilitários */
-  --first-blue: 205 100% 32%;
-  --first-blue-dark: 221 39% 28%;
-  --first-yellow: 48 89% 56%;
-  --first-yellow-dark: 46 84% 53%;
+    --first-yellow: 48 89% 56%;
+    --first-yellow-light: 48 95% 65%;
+    --first-yellow-dark: 46 84% 53%;
+    --first-yellow-deeper: 42 75% 45%;
 
-  /* Gradients prontos (se quiser usar como bg-[image:var(--gradient-*)]) */
-  --gradient-primary: linear-gradient(
-    135deg,
-    hsl(var(--first-blue)),
-    hsl(var(--first-blue-dark))
-  );
-  --gradient-accent: linear-gradient(
-    135deg,
-    hsl(var(--first-yellow)),
-    hsl(var(--first-yellow-dark))
-  );
-  --gradient-hero: linear-gradient(
-    135deg,
-    hsl(var(--first-blue) / 0.05),
-    hsl(var(--first-yellow) / 0.05)
-  );
+    /* Acentos */
+    --emerald: 160 84% 39%;
+    --emerald-light: 160 75% 50%;
+    --teal: 180 83% 47%;
+    --purple: 260 50% 60%;
+    --orange: 25 95% 53%;
 
-  /* Sombras */
-  --shadow-elegant: 0 10px 30px -10px hsl(var(--first-blue) / 0.2);
-  --shadow-card: 0 4px 20px -4px hsl(var(--first-blue) / 0.1);
-  --shadow-button: 0 4px 15px -3px hsl(var(--first-yellow) / 0.4);
+    /* Gradientes (usáveis via bg-[var(--gradient-*)] se quiser) */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--first-blue)),
+      hsl(var(--first-blue-dark))
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(var(--first-yellow)),
+      hsl(var(--first-yellow-dark))
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--first-blue) / 0.08),
+      hsl(var(--first-yellow) / 0.08)
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(var(--first-blue) / 0.03),
+      hsl(var(--emerald) / 0.03)
+    );
+    --gradient-success: linear-gradient(
+      135deg,
+      hsl(var(--emerald)),
+      hsl(var(--teal))
+    );
+    --gradient-premium: linear-gradient(
+      135deg,
+      hsl(var(--purple)),
+      hsl(var(--first-blue))
+    );
+    --gradient-warm: linear-gradient(
+      135deg,
+      hsl(var(--orange)),
+      hsl(var(--first-yellow))
+    );
+    --gradient-elegant: linear-gradient(
+      145deg,
+      hsl(var(--first-blue-deeper)),
+      hsl(var(--first-blue))
+    );
 
-  /* Sidebar e charts (mantidos do template Next) */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+    /* BGs dinâmicos */
+    --bg-section-1: linear-gradient(
+      135deg,
+      hsl(var(--first-blue) / 0.02),
+      hsl(var(--emerald) / 0.02)
+    );
+    --bg-section-2: linear-gradient(
+      135deg,
+      hsl(var(--first-yellow) / 0.03),
+      hsl(var(--orange) / 0.02)
+    );
+    --bg-section-3: linear-gradient(
+      135deg,
+      hsl(var(--teal) / 0.02),
+      hsl(var(--first-blue) / 0.03)
+    );
 
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-}
+    /* Sombras */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--first-blue) / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(var(--first-blue) / 0.12);
+    --shadow-button: 0 4px 15px -3px hsl(var(--first-yellow) / 0.4);
+    --shadow-success: 0 4px 20px -4px hsl(var(--emerald) / 0.3);
+    --shadow-premium: 0 6px 25px -6px hsl(var(--purple) / 0.3);
+    --shadow-warm: 0 4px 20px -4px hsl(var(--orange) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--first-yellow) / 0.2);
 
-/* Tema dark mantendo o look do seu template Next (oklch) */
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+    --radius: 0.5rem;
 
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
+    /* Sidebar/Charts (mantidos se usar o template) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-  --destructive: oklch(0.704 0.191 22.216);
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-  /* Sidebar/Charts dark (mantidos) */
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    /* sidebar */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 }
 
 /* Base */
@@ -204,17 +242,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
-/* Suaviza rolagem para os anchors */
+/* Suaviza rolagem */
 html,
 body {
   scroll-behavior: smooth;
 }
 
-/* === Animações usadas na landing (Lovable) === */
+/* Animações */
 @keyframes float {
   0%,
   100% {
@@ -245,7 +283,6 @@ body {
   }
 }
 
-/* Utilitários dessas animações (mantém as classes existentes) */
 @layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -255,5 +292,65 @@ body {
   }
   .animate-slide-in-right {
     animation: slide-in-right 0.6s ease-out both;
+  }
+
+  /* Gradients como classes utilitárias */
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+  .bg-gradient-accent {
+    background-image: var(--gradient-accent);
+  }
+  .bg-gradient-success {
+    background-image: var(--gradient-success);
+  }
+  .bg-gradient-premium {
+    background-image: var(--gradient-premium);
+  }
+  .bg-gradient-warm {
+    background-image: var(--gradient-warm);
+  }
+  .bg-gradient-elegant {
+    background-image: var(--gradient-elegant);
+  }
+
+  /* Backgrounds de seção */
+  .bg-bg-section-1 {
+    background-image: var(--bg-section-1);
+  }
+  .bg-bg-section-2 {
+    background-image: var(--bg-section-2);
+  }
+  .bg-bg-section-3 {
+    background-image: var(--bg-section-3);
+  }
+
+  /* Sombras customizadas usadas nas bolinhas/badges/botões */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  .shadow-success {
+    box-shadow: var(--shadow-success);
+  }
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
   }
 }

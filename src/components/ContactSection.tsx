@@ -1,14 +1,14 @@
-// components/ContactSection.tsx
+// src/components/ContactSection.tsx
 "use client";
 
 import { useState, useEffect } from "react";
+import { toast } from "sonner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { toast } from "sonner";
 import {
   Phone,
   Mail,
@@ -42,7 +42,6 @@ const ContactSection = () => {
     message: "",
   });
 
-  // CSRF inicial
   useEffect(() => {
     const token = setCSRFToken();
     setCSRFTokenState(token);
@@ -50,13 +49,9 @@ const ContactSection = () => {
 
   const handleInputChange = (field: string, value: string) => {
     const sanitizedValue = sanitizeInput(value);
-    setFormData((prev) => ({
-      ...prev,
-      [field]: sanitizedValue,
-    }));
+    setFormData((prev) => ({ ...prev, [field]: sanitizedValue }));
   };
 
-  // Hash simples do cliente (não sensível)
   const generateClientHash = async (): Promise<string> => {
     const data = `${navigator.userAgent}${screen.width}${
       screen.height
@@ -74,7 +69,6 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 1) rate limit no client
     if (!checkRateLimit("contact_form")) {
       toast.error("Muitas tentativas", {
         description: "Aguarde um minuto antes de enviar outra mensagem.",
@@ -82,13 +76,11 @@ const ContactSection = () => {
       return;
     }
 
-    // 2) honeypot (bot)
     if (!validateHoneypot(honeypot)) {
       console.warn("Bot detected via honeypot field");
       return;
     }
 
-    // 3) CSRF (client)
     if (!validateCSRFToken(csrfToken)) {
       toast.error("Erro de segurança", {
         description: "Token de segurança inválido. Recarregue a página.",
@@ -96,13 +88,11 @@ const ContactSection = () => {
       return;
     }
 
-    // 4) validação (Zod)
     const validationResult = validateContactForm({
       ...formData,
       honeypot,
       csrfToken,
     });
-
     if (!validationResult.success) {
       const firstError = validationResult.errors?.[0];
       toast.error("Dados inválidos", {
@@ -122,44 +112,42 @@ const ContactSection = () => {
         source: "first-landing-page",
         userAgent: navigator.userAgent.substring(0, 200),
         ipHash: await generateClientHash(),
-        honeypot, // mantém no payload para validação server
+        honeypot,
       };
 
-      // 🔒 Envia para a rota server-side (API Route), que repassa ao N8N
+      // 🔒 Envia para a rota server-side; ela repassa ao N8N
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        toast.success("Mensagem enviada com sucesso!", {
-          description: "Entraremos em contato em até 24 horas.",
-        });
-
-        // reset
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          service: "",
-          message: "",
-        });
-        setHoneypot("");
-
-        // novo CSRF para próxima submissão
-        const newToken = setCSRFToken();
-        setCSRFTokenState(newToken);
-      } else {
+      if (!response.ok) {
         const { error } = await response
           .json()
-          .catch(() => ({ error: "Erro no envio" }));
-        throw new Error(error || `HTTP ${response.status}`);
+          .catch(() => ({ error: "Erro ao encaminhar" }));
+        throw new Error(error);
       }
-    } catch (error) {
-      console.error("Erro no envio:", error);
+
+      setIsSubmitted(true);
+      toast.success("Mensagem enviada com sucesso!", {
+        description: "Entraremos em contato em até 24 horas.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: "",
+      });
+      setHoneypot("");
+
+      const newToken = setCSRFToken();
+      setCSRFTokenState(newToken);
+    } catch (err) {
+      console.error("Erro no envio:", err);
       toast.error("Erro no envio", {
         description: "Ocorreu um erro ao enviar sua mensagem. Tente novamente.",
       });
@@ -196,9 +184,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contato" className="py-20 bg-background scroll-mt-24">
+    <section id="contato" className="py-20 bg-bg-section-3">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Badge
             variant="outline"
@@ -216,7 +203,6 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
           <div className="lg:col-span-1 space-y-8 animate-fade-in">
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
@@ -266,7 +252,6 @@ const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-2 animate-slide-in-right">
             <Card className="shadow-2xl border border-border/50">
               <CardHeader className="text-center pb-6">
@@ -300,7 +285,6 @@ const ContactSection = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Name and Email */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label
@@ -321,7 +305,6 @@ const ContactSection = () => {
                           required
                         />
                       </div>
-
                       <div className="space-y-2">
                         <Label
                           htmlFor="email"
@@ -343,7 +326,6 @@ const ContactSection = () => {
                       </div>
                     </div>
 
-                    {/* Phone and Company */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label
@@ -364,7 +346,6 @@ const ContactSection = () => {
                           required
                         />
                       </div>
-
                       <div className="space-y-2">
                         <Label
                           htmlFor="company"
@@ -385,7 +366,6 @@ const ContactSection = () => {
                       </div>
                     </div>
 
-                    {/* Service Type */}
                     <div className="space-y-2">
                       <Label
                         htmlFor="service"
@@ -405,7 +385,6 @@ const ContactSection = () => {
                       />
                     </div>
 
-                    {/* Message */}
                     <div className="space-y-2">
                       <Label
                         htmlFor="message"
@@ -426,7 +405,7 @@ const ContactSection = () => {
                       />
                     </div>
 
-                    {/* Honeypot (hidden) */}
+                    {/* Honeypot */}
                     <div
                       style={{
                         position: "absolute",
@@ -445,15 +424,13 @@ const ContactSection = () => {
                       />
                     </div>
 
-                    {/* CSRF Token (hidden) */}
                     <input type="hidden" name="csrfToken" value={csrfToken} />
 
-                    {/* Submit */}
                     <Button
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       {isSubmitting ? (
                         <>
@@ -470,7 +447,10 @@ const ContactSection = () => {
 
                     <div className="text-center text-sm text-muted-foreground">
                       Ao enviar este formulário, você concorda com nossa{" "}
-                      <a href="#" className="text-primary hover:underline">
+                      <a
+                        href="/politica-de-privacidade"
+                        className="text-primary hover:underline"
+                      >
                         Política de Privacidade
                       </a>
                     </div>
