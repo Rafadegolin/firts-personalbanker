@@ -36,9 +36,9 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Transforme Capital em{" "}
+              Seu Banker Pessoal para defender seus interesses juntos as{" "}
               <span className="text-primary relative">
-                Oportunidades
+                Instituições
                 <svg
                   className="absolute bottom-0 left-0 w-full h-3 text-accent/30"
                   viewBox="0 0 300 12"
@@ -57,17 +57,13 @@ const HeroSection = () => {
             <p className="text-xl text-muted-foreground mb-4 max-w-2xl">
               Soluções Financeiras Inteligentes para Empresas e Investidores
             </p>
-            <p className="text-lg text-foreground/80 mb-8 max-w-2xl">
-              Com 20 anos de experiência em Bancos Internacionais, ofereço
-              assessoria personalizada como seu Personal Banker empresarial.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 onClick={() => scrollTo("#contato")}
                 variant="elegant"
                 size="lg"
-                className="font-semibold px-8 py-4 rounded-lg hover:scale-105 group"
+                className="font-semibold px-8 py-4 rounded-lg hover:scale-105 group cursor-pointer"
               >
                 Solicitar Consultoria
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +73,7 @@ const HeroSection = () => {
                 onClick={() => scrollTo("#servicos")}
                 variant="accent"
                 size="lg"
-                className="font-semibold px-8 py-4 rounded-lg hover:scale-105"
+                className="font-semibold px-8 py-4 rounded-lg hover:scale-105 cursor-pointer"
               >
                 Conhecer Soluções
               </Button>
@@ -136,7 +132,7 @@ const HeroSection = () => {
 
                 <div className="bg-primary-foreground/10 rounded-lg p-4">
                   <div className="text-lg font-semibold text-accent mb-1">
-                    R$ 2.5M+
+                    R$ 1BI+
                   </div>
                   <div className="text-xs text-primary-foreground/80">
                     Volume Intermediado

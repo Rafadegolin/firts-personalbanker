@@ -15,12 +15,12 @@ const ServicesSection = () => {
       icon: CreditCard,
       title: "Soluções em Crédito",
       description:
-        "Hub de parceiros especializados oferecendo as melhores condições do mercado para suas necessidades de capital.",
+        "Hub de parceiros especializados para obter as melhores condições do mercado para suas necessidades.",
       features: [
-        "Capital de Giro",
-        "Investimento Fixo",
-        "Antecipação de Recebíveis",
-        "BNDES Automático",
+        "Capital de Giro.",
+        "Investimento Fixo.",
+        "Antecipação de Recebíveis.",
+        "BNDES Automático.",
       ],
       color: "from-first-blue/15 to-emerald/10",
       badge: "Mais Popular",
@@ -29,12 +29,12 @@ const ServicesSection = () => {
       icon: TrendingUp,
       title: "Assessoria em Investimentos",
       description:
-        "Estratégias personalizadas de investimento e assessoria para internacionalização de patrimônio.",
+        "Decisões e acompanhamentos personalizados de investimentos com foco na segurança e rentabilidade.",
       features: [
-        "Internacionalização",
-        "Private Banking",
-        "Gestão de Carteiras",
-        "Estruturação",
+        "Fundos de Investimentos.",
+        "Renda Fixa.",
+        "Renda Variável.",
+        "Opções Internacionais.",
       ],
       color: "from-first-yellow/15 to-orange/10",
       badge: "Exclusivo",
@@ -43,12 +43,12 @@ const ServicesSection = () => {
       icon: Building2,
       title: "Assessoria Bancária",
       description:
-        "Personal Banker empresarial dedicado para otimizar relacionamentos bancários e negociar condições especiais.",
+        "Personal Banker dedicado para otimizar relacionamentos bancários e negociar condições diferenciadas visando economia com despesas financeiras e eficiência das reservas de recursos.",
       features: [
-        "Relacionamento Bancário",
-        "Negociação de Tarifas",
-        "Produtos Especiais",
-        "Consultoria",
+        "Negociação de operações de crédito.",
+        "Atuação para otimizar rentabilidades as aplicações financeiras.",
+        "Conselheiro para dúvidas de equipe no tocante a serviços e soluções bancárias.",
+        "Negociação para reduzir tarifas e custos bancários em geral.",
       ],
       color: "from-purple/15 to-teal/10",
       badge: "Personalizado",
@@ -56,13 +56,14 @@ const ServicesSection = () => {
     {
       icon: Handshake,
       title: "Outras Soluções",
-      description:
-        "Parcerias estratégicas em seguros, previdência, câmbio e outros serviços financeiros especializados.",
+      description: "Parcerias estratégicas que podem melhorar seu negócio.",
       features: [
-        "Seguros Corporativos",
-        "Previdência",
-        "Câmbio",
-        "Consultoria Especializada",
+        "Fundo para Crédito Internacional.",
+        "Revisão de Recuperação Tributária dos últimos 5 anos.",
+        "Assessoria para Planejamento Sucessório e Holding Familiar.",
+        "Seguros de todos os tipos * Opções Resgatáveis (Vida).",
+        "Valuation.",
+        "Consultoria Especializada em Agronegócios (Para produtores e Empresas da Cadeia Agro).",
       ],
       color: "from-emerald/15 to-first-blue/10",
       badge: "Completo",
@@ -149,42 +150,12 @@ const ServicesSection = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* CTA Button */}
-                <Button
-                  variant="outline"
-                  className="w-full group/btn border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                >
-                  Saiba Mais
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
               </CardContent>
 
               {/* Hover effect overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Card>
           ))}
-        </div>
-
-        {/* Enhanced Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="bg-gradient-card rounded-2xl p-8 border border-first-blue/20 shadow-elegant">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Precisa de uma solução personalizada?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Nossa equipe está pronta para desenvolver estratégias financeiras
-              únicas para seu negócio.
-            </p>
-            <Button
-              variant="warm"
-              size="lg"
-              className="font-semibold px-8 py-4 rounded-lg hover:scale-105"
-            >
-              Solicitar Consultoria Gratuita
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </div>
         </div>
       </div>
     </section>

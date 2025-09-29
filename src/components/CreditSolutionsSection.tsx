@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import {
@@ -15,7 +14,7 @@ import {
   Truck,
   Users,
   Briefcase,
-  ArrowRight,
+  BanknoteArrowUp,
 } from "lucide-react";
 
 const CreditSolutionsSection = () => {
@@ -104,9 +103,15 @@ const CreditSolutionsSection = () => {
     },
     {
       icon: Banknote,
-      title: "Domicílio Bancário",
-      description:
-        "Soluções para concentração bancária e otimização de relacionamentos.",
+      title: "Domicílio via Escrow Account e Comissárias",
+      description: "Soluções customizadas para vendas sem boletos.",
+      category: "Bancário",
+      color: "from-accent/10 to-accent/5",
+    },
+    {
+      icon: BanknoteArrowUp,
+      title: "Crédito via Fundo Internacional",
+      description: "Parceria para captações estratégicas em Euro e Dólar.",
       category: "Bancário",
       color: "from-accent/10 to-accent/5",
     },
@@ -150,7 +155,6 @@ const CreditSolutionsSection = () => {
             Soluções de Crédito
           </Badge>
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            13 Tipos de{" "}
             <span className="text-primary">Crédito Empresarial</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -193,7 +197,7 @@ const CreditSolutionsSection = () => {
           {filteredSolutions.map((solution, index) => (
             <Card
               key={index}
-              className={`group relative overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:scale-105 animate-fade-in cursor-pointer`}
+              className={`group relative overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:scale-105 animate-fade-in`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               {/* Background gradient */}
@@ -226,96 +230,9 @@ const CreditSolutionsSection = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed text-center mb-4">
                   {solution.description}
                 </p>
-
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="w-full text-primary hover:text-primary-foreground hover:bg-primary transition-all duration-300 group/btn"
-                >
-                  Saiba Mais
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Bottom Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
-          {/* Stats */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Por que escolher nosso Hub de Crédito?
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Nossa rede de parceiros especializados oferece as melhores
-                condições do mercado, com análise personalizada e aprovação
-                agilizada para cada tipo de necessidade empresarial.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-card rounded-lg border border-border">
-                <div className="text-3xl font-bold text-primary mb-2">150+</div>
-                <div className="text-sm text-muted-foreground">
-                  Parceiros Credenciados
-                </div>
-              </div>
-              <div className="text-center p-6 bg-card rounded-lg border border-border">
-                <div className="text-3xl font-bold text-accent mb-2">98%</div>
-                <div className="text-sm text-muted-foreground">
-                  Taxa de Aprovação
-                </div>
-              </div>
-              <div className="text-center p-6 bg-card rounded-lg border border-border">
-                <div className="text-3xl font-bold text-warning mb-2">48h</div>
-                <div className="text-sm text-muted-foreground">
-                  Resposta Média
-                </div>
-              </div>
-              <div className="text-center p-6 bg-card rounded-lg border border-border">
-                <div className="text-3xl font-bold text-primary mb-2">
-                  R$ 2B+
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Volume Intermediado
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20 text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Precisa de Crédito para sua Empresa?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Nossa equipe analisa seu perfil e encontra a melhor solução de
-              crédito entre nossos parceiros especializados.
-            </p>
-
-            <div className="space-y-4">
-              <Button
-                onClick={() => {
-                  const element = document.querySelector("#contato");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-                size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                Solicitar Análise Gratuita
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-
-              <div className="text-sm text-muted-foreground">
-                ✓ Análise sem compromisso • ✓ Resposta em 24h • ✓ Melhores
-                condições
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

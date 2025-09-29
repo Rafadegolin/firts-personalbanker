@@ -21,35 +21,35 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: "Alessandra Oses",
-      company: "Copperfio",
-      position: "Diretora Financeira",
+      name: "Alessandra Oses ",
+      company: "Copperfio Ind. e Com.",
+      position: "Diretor Financeiro-sócio",
       testimonial:
-        "A FIRST revolucionou nossa gestão financeira. Com a consultoria do Emerson, conseguimos otimizar nosso fluxo de caixa e encontrar as melhores condições de crédito do mercado. Recomendo sem hesitar.",
+        "Excelência profissional e ótima consultoria em todos aspectos financeiros. Conhecimento de mercado e auxílio nas tomadas de decisões.",
       rating: 5,
     },
     {
       name: "Maria José Barioni",
-      company: "Mocafor",
-      position: "CEO",
+      company: "Mocafor Tratores e Equipamentos Agrícolas",
+      position: "Sócia-Proprietária ",
       testimonial:
-        "O atendimento personalizado da FIRST fez toda a diferença. Emerson entende profundamente as necessidades empresariais e sempre encontra soluções inovadoras. Uma parceria que agrega muito valor.",
+        "Nossa parceria iniciou com a confiança durante relacionamento com o Emerson através de bancos parceiros, sendo essencial para crescimento da empresa através de grandes conquistas na parte de aconselhamento financeiro.",
       rating: 5,
     },
     {
       name: "Cláudio Garcia Jr",
       company: "R J Nascimento",
-      position: "Diretor Comercial",
+      position: "Diretor Financeiro",
       testimonial:
-        "Trabalhar com a FIRST é ter um personal banker dedicado exclusivamente aos nossos objetivos. A expertise e rede de contatos do Emerson nos abriu portas que não imaginávamos possíveis.",
+        "Parceria de mais de 13 anos junto ao Emerson. Sempre com profissionalismo incrível, eficiência e conhecimento junto ao mercado financeiro, orientando sempre nossas dúvidas financeiras.",
       rating: 5,
     },
     {
       name: "José Roberto",
-      company: "Cairu PMA",
-      position: "Diretor Executivo",
+      company: "Cairu PMA Bicicletas",
+      position: "Diretor Financeiro",
       testimonial:
-        "A FIRST nos trouxe soluções financeiras que impactaram diretamente nossos resultados. O conhecimento técnico aliado ao atendimento humanizado faz da FIRST nossa primeira escolha em consultoria financeira.",
+        "Seu trabalho é de alta qualidade e sempre entrega resultados impressionantes.",
       rating: 5,
     },
   ];
@@ -233,18 +233,14 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Bottom stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 animate-fade-in">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-16 animate-fade-in">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">98%</div>
+            <div className="text-3xl font-bold text-primary mb-2">100%</div>
             <div className="text-muted-foreground">Satisfação dos Clientes</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-accent mb-2">250+</div>
             <div className="text-muted-foreground">Empresas Atendidas</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-warning mb-2">15 anos</div>
-            <div className="text-muted-foreground">Relacionamento Médio</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">5★</div>

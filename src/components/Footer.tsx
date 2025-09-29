@@ -39,9 +39,16 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/emersonluizgonzaga1983/",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/emerson.gonzaga.first/",
+      label: "Instagram",
+    },
   ];
 
   return (
@@ -84,7 +91,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-accent" />
                 <span className="text-primary-foreground/80">
-                  São Paulo, SP - Brasil
+                  Mogi Guaçu, SP - Brasil
                 </span>
               </div>
             </div>
@@ -99,6 +106,7 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
                     aria-label={social.label}
                     className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110"
                   >
@@ -166,24 +174,6 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Newsletter */}
-            <div className="bg-primary-foreground/10 rounded-lg p-6">
-              <h4 className="font-semibold text-primary-foreground mb-3 ">
-                Newsletter
-              </h4>
-              <p className="text-primary-foreground/80 text-sm mb-4">
-                Receba insights financeiros exclusivos
-              </p>
-              <div className="flex space-x-2">
-                <Button
-                  className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground font-medium cursor-pointer"
-                  size="sm"
-                >
-                  Assinar
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -229,34 +219,8 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-
-            <Button
-              onClick={scrollToTop}
-              size="icon"
-              variant="outline"
-              aria-label="Voltar ao topo"
-              className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all duration-300 hover:scale-110"
-            >
-              <ArrowUp className="w-5 h-5" />
-            </Button>
           </div>
         </div>
-      </div>
-
-      {/* Floating Action Button for Quick Contact */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          size="lg"
-          className="rounded-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-2xl hover:shadow-accent/25 transition-all duration-300 hover:scale-110 p-4 cursor-pointer"
-          onClick={() =>
-            document
-              .getElementById("contato")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          <Phone className="w-6 h-6 mr-2" />
-          Contato
-        </Button>
       </div>
     </footer>
   );

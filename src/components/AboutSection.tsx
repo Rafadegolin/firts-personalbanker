@@ -56,31 +56,25 @@ const AboutSection = () => {
                   Emerson Gonzaga
                 </h3>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Com mais de duas décadas de experiência no mercado financeiro
-                  internacional, Emerson Gonzaga traz uma visão única e
-                  estratégica para o mundo corporativo brasileiro.
+                  Com mais de 20 anos de experiência no mercado financeiro, a
+                  First Personal Banker é liderada por Emerson Gonzaga,
+                  profissional com sólida formação acadêmica com MBAs em Gestão
+                  Empresarial (FGV), Finanças e Banking (UNIP) e Agronegócios
+                  (USP/ESALQ) e Especialista em Investimentos (ANBIMA-CEA). Ao
+                  longo de minha carreira, tive a oportunidade de atuar em
+                  instituições renomadas, como o Banco Santander e o Banco
+                  Safra, onde desenvolvi habilidades essenciais para oferecer um
+                  atendimento personalizado e de excelência.
                 </p>
-
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span className="text-foreground font-medium">
-                      MBAs pela FGV, UNIP e ESALQ
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <span className="text-foreground font-medium">
-                      Certificação CEA Anbima
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-warning rounded-full" />
-                    <span className="text-foreground font-medium">
-                      Especialista em Bancos Internacionais
-                    </span>
-                  </div>
-                </div>
+                <p className="text-lg text-muted-foreground mb-4">
+                  Na First, valorizamos a individualidade de cada cliente e
+                  buscamos construir um relacionamento de confiança e
+                  transparência. Queremos entender suas necessidades específicas
+                  e oferecer estratégias personalizadas que atendam aos seus
+                  objetivos financeiros. Se você está em busca de um parceiro
+                  confiável para ajudá-lo em suas decisões financeiras, entre em
+                  contato. Estamos prontos para ajudá-lo a alcançar suas metas.
+                </p>
               </div>
 
               <div className="bg-card rounded-lg p-6 border border-border shadow-lg">
@@ -88,11 +82,17 @@ const AboutSection = () => {
                   O Diferencial da FIRST
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  A FIRST atua como sua boutique financeira personalizada,
-                  oferecendo um hub de parceiros estratégicos e soluções sob
-                  medida. Nossa abordagem consultiva garante que cada cliente
-                  receba atenção exclusiva e estratégias customizadas para suas
-                  necessidades específicas.
+                  Atuamos como um elo junto aos bancos e fundos, oferecendo um
+                  hub de parceiros estratégicos e soluções sob medida. Nossa
+                  abordagem consultiva garante que cada cliente receba atenção
+                  exclusiva e estratégias customizadas para suas necessidades
+                  específicas, nosso cliente tem um Profissional Bancário dentro
+                  da sua empresa e/ou cuidando de seus investimentos
+                  particulares. Isso proporciona redução de custos com juros,
+                  taxas, tarifas, melhor estruturação de operações de crédito
+                  para eficiência de fluxo de caixa e assessoria em
+                  investimentos personalizada sem viés dos bancos para obter o
+                  melhor desempenho de acordo com seu perfil.
                 </p>
               </div>
             </div>
@@ -129,9 +129,10 @@ const AboutSection = () => {
                 <div className="text-center">
                   <div className="text-4xl text-primary mb-4">"</div>
                   <p className="text-foreground italic mb-4">
-                    Nossa missão é democratizar o acesso a soluções financeiras
-                    sofisticadas, oferecendo um atendimento personalizado que
-                    grandes instituições não conseguem proporcionar.
+                    Nossa missão é proporcionar soluções bancárias customizadas
+                    e de alta qualidade, atuando como um Advisor Pessoal para
+                    tomadas de créditos e investimentos, sempre em busca das
+                    melhores soluções financeiras para nossos clientes.
                   </p>
                   <div className="text-sm text-muted-foreground font-medium">
                     - Emerson Gonzaga, Fundador

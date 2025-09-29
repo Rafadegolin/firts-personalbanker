@@ -172,7 +172,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "Endereço",
-      description: "São Paulo, SP - Brasil",
+      description: "Mogi Guaçu, SP - Brasil",
       action: "",
     },
     {

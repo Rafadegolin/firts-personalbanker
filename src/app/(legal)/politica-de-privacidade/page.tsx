@@ -52,7 +52,6 @@ const LegalCallout = ({
     type === "warning"
       ? "border-warning/40 bg-warning/5"
       : "border-primary/30 bg-primary/5";
-
   const Icon = type === "warning" ? AlertTriangle : Info;
 
   return (
@@ -66,7 +65,10 @@ const LegalCallout = ({
 };
 
 const TOCDesktop = ({ activeSection }: { activeSection: string }) => (
-  <nav className="sticky top-24 hidden lg:block" aria-label="Sumário">
+  <nav
+    className="sticky top-24 hidden lg:block w-[18rem] flex-none"
+    aria-label="Sumário"
+  >
     <Card className="p-4 shadow-card">
       <h3 className="font-semibold text-foreground mb-4">Sumário</h3>
       <ul className="space-y-2">
@@ -122,9 +124,16 @@ const LegalSection = ({
   children: React.ReactNode;
 }) => {
   return (
-    <Card id={id} className="p-6 shadow-card border-border/60 mb-6">
-      <h2 className="text-2xl font-semibold text-foreground mb-4">{title}</h2>
-      <div className="prose prose-gray max-w-none">{children}</div>
+    <Card
+      id={id}
+      className="scroll-mt-28 p-8 md:p-10 shadow-card border-border/60 mb-8"
+    >
+      <h2 className="text-[28px] md:text-[32px] font-semibold text-foreground mb-4">
+        {title}
+      </h2>
+      <div className="prose prose-gray prose-lg md:prose-xl max-w-none">
+        {children}
+      </div>
     </Card>
   );
 };
@@ -133,7 +142,7 @@ const BackToTop = ({ visible }: { visible: boolean }) => (
   <Button
     variant="elegant"
     size="icon"
-    className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
+    className={`fixed bottom-6 right-6 z-50 transition-all duration-300 cursor-pointer ${
       visible
         ? "opacity-100 translate-y-0"
         : "opacity-0 translate-y-4 pointer-events-none"
@@ -179,13 +188,13 @@ const PoliticaPrivacidade = () => {
 
       {/* Header */}
       <header className="bg-gradient-hero border-b border-border/60">
-        <div className="container mx-auto px-4 py-6 max-w-7xl">
+        <div className="mx-auto w-full max-w-[1280px] px-6 md:px-8 py-8">
           <Breadcrumb className="mb-4">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink
                   href="/"
-                  className="text-muted-foreground hover:text-foreground"
+                  className="text-muted-foreground hover:text-foreground font-bold text-2xl"
                 >
                   Home
                 </BreadcrumbLink>
@@ -209,7 +218,7 @@ const PoliticaPrivacidade = () => {
                 <Shield className="w-3 h-3 mr-1" />
                 Documento Legal
               </Badge>
-              <h1 className="text-4xl font-bold text-foreground mb-2">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
                 Política de Privacidade
               </h1>
               <p className="text-muted-foreground text-lg mb-4">
@@ -220,21 +229,22 @@ const PoliticaPrivacidade = () => {
                 Última atualização: 16 de setembro de 2024
               </p>
             </div>
-            {/* (removidos botões de imprimir/baixar) */}
           </div>
         </div>
       </header>
 
       {/* Conteúdo */}
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
-        {/* Grid: 16rem (TOC) / restante (conteúdo) */}
-        <div className="grid gap-8 lg:grid-cols-[16rem_1fr]">
-          <TOCDesktop activeSection={activeSection} />
+      <div className="mx-auto w-full max-w-[1280px] px-6 md:px-8 py-10">
+        {/* Layout central: aside fixo + conteúdo fluido */}
+        <div className="lg:flex lg:items-start lg:gap-8">
+          <aside className="hidden lg:block lg:flex-none lg:w-[18rem]">
+            <TOCDesktop activeSection={activeSection} />
+          </aside>
 
-          <main className="min-w-0">
+          <main className="min-w-0 flex-1">
             <TOCMobile />
 
-            {/* === Seções (conteúdo original) === */}
+            {/* === Seções === */}
             <LegalSection
               id="controlador-dados"
               title="Quem Somos e Dados de Contato do Controlador"
