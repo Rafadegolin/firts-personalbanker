@@ -160,14 +160,14 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Telefone",
-      description: "+55 (11) 99999-9999",
-      action: "tel:+5511999999999",
+      description: "+55 (19) 99761-8780",
+      action: "tel:+5519997618780",
     },
     {
       icon: Mail,
       title: "Email",
-      description: "contato@first.com.br",
-      action: "mailto:contato@first.com.br",
+      description: "first.personal@gmail.com.br",
+      action: "mailto:first.personal@gmail.com.br",
     },
     {
       icon: MapPin,

@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import {
   Mail,
   Phone,
@@ -79,13 +78,13 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent" />
                 <span className="text-primary-foreground/80">
-                  +55 (11) 99999-9999
+                  +55 (19) 99761-8780
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent" />
                 <span className="text-primary-foreground/80">
-                  contato@first.com.br
+                  first.personal@gmail.com.br
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -204,7 +203,7 @@ const Footer = () => {
           <div className="flex items-center space-x-6">
             <div className="text-center">
               <p className="text-primary-foreground/80 text-sm">
-                © 2024 FIRST. Todos os direitos reservados.
+                © 2025 FIRST. Todos os direitos reservados.
               </p>
               <div className="flex items-center justify-center space-x-4 mt-2">
                 <div className="flex items-center space-x-1">
