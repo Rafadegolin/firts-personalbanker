@@ -66,55 +66,55 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 221 39% 28%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 221 39% 28%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 221 39% 28%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 205 100% 32%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 215 28% 34%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 221 39% 28%;
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 16% 46%;
 
-    --accent: 48 89% 56%;
-    --accent-foreground: 221 39% 28%;
+    --accent: 46 45% 48%;
+    --accent-foreground: 0 0% 100%;
 
-    --warning: 46 84% 53%;
-    --warning-foreground: 221 39% 28%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 205 100% 32%;
+    --border: 215 18% 88%;
+    --input: 215 18% 88%;
+    --ring: 215 28% 34%;
 
-    /* 🔸 FIRST brand (paleta aprimorada) */
-    --first-blue: 205 100% 32%;
-    --first-blue-light: 205 85% 45%;
-    --first-blue-dark: 221 39% 28%;
-    --first-blue-deeper: 225 50% 20%;
+    /* 🔸 FIRST brand (paleta profissional sóbria) */
+    --first-blue: 215 28% 34%;
+    --first-blue-light: 215 25% 45%;
+    --first-blue-dark: 220 30% 25%;
+    --first-blue-deeper: 222 35% 18%;
 
-    --first-yellow: 48 89% 56%;
-    --first-yellow-light: 48 95% 65%;
-    --first-yellow-dark: 46 84% 53%;
-    --first-yellow-deeper: 42 75% 45%;
+    --first-yellow: 46 45% 48%;
+    --first-yellow-light: 46 55% 58%;
+    --first-yellow-dark: 44 50% 42%;
+    --first-yellow-deeper: 42 48% 35%;
 
-    /* Acentos */
-    --emerald: 160 84% 39%;
-    --emerald-light: 160 75% 50%;
-    --teal: 180 83% 47%;
-    --purple: 260 50% 60%;
-    --orange: 25 95% 53%;
+    /* Acentos profissionais */
+    --emerald: 160 35% 42%;
+    --emerald-light: 160 40% 52%;
+    --teal: 185 35% 45%;
+    --purple: 260 30% 50%;
+    --orange: 25 60% 50%;
 
-    /* Gradientes (usáveis via bg-[var(--gradient-*)] se quiser) */
+    /* Gradientes profissionais */
     --gradient-primary: linear-gradient(
       135deg,
       hsl(var(--first-blue)),
@@ -127,13 +127,13 @@
     );
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(var(--first-blue) / 0.08),
-      hsl(var(--first-yellow) / 0.08)
+      hsl(var(--first-blue) / 0.05),
+      hsl(var(--muted) / 0.5)
     );
     --gradient-card: linear-gradient(
       145deg,
-      hsl(var(--first-blue) / 0.03),
-      hsl(var(--emerald) / 0.03)
+      hsl(var(--card)),
+      hsl(var(--muted) / 0.3)
     );
     --gradient-success: linear-gradient(
       135deg,
@@ -142,12 +142,12 @@
     );
     --gradient-premium: linear-gradient(
       135deg,
-      hsl(var(--purple)),
+      hsl(var(--first-blue-deeper)),
       hsl(var(--first-blue))
     );
     --gradient-warm: linear-gradient(
       135deg,
-      hsl(var(--orange)),
+      hsl(var(--first-yellow-dark)),
       hsl(var(--first-yellow))
     );
     --gradient-elegant: linear-gradient(
@@ -156,31 +156,31 @@
       hsl(var(--first-blue))
     );
 
-    /* BGs dinâmicos */
+    /* BGs dinâmicos - mais sutis e profissionais */
     --bg-section-1: linear-gradient(
       135deg,
-      hsl(var(--first-blue) / 0.02),
-      hsl(var(--emerald) / 0.02)
+      hsl(var(--muted) / 0.3),
+      hsl(var(--background))
     );
     --bg-section-2: linear-gradient(
       135deg,
-      hsl(var(--first-yellow) / 0.03),
-      hsl(var(--orange) / 0.02)
+      hsl(var(--first-blue) / 0.02),
+      hsl(var(--muted) / 0.2)
     );
     --bg-section-3: linear-gradient(
       135deg,
-      hsl(var(--teal) / 0.02),
-      hsl(var(--first-blue) / 0.03)
+      hsl(var(--muted) / 0.15),
+      hsl(var(--first-blue) / 0.02)
     );
 
-    /* Sombras */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--first-blue) / 0.25);
-    --shadow-card: 0 4px 20px -4px hsl(var(--first-blue) / 0.12);
-    --shadow-button: 0 4px 15px -3px hsl(var(--first-yellow) / 0.4);
-    --shadow-success: 0 4px 20px -4px hsl(var(--emerald) / 0.3);
-    --shadow-premium: 0 6px 25px -6px hsl(var(--purple) / 0.3);
-    --shadow-warm: 0 4px 20px -4px hsl(var(--orange) / 0.25);
-    --shadow-glow: 0 0 40px hsl(var(--first-yellow) / 0.2);
+    /* Sombras profissionais mais sutis */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--first-blue-dark) / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(var(--first-blue) / 0.08);
+    --shadow-button: 0 4px 15px -3px hsl(var(--first-yellow-dark) / 0.25);
+    --shadow-success: 0 4px 20px -4px hsl(var(--emerald) / 0.2);
+    --shadow-premium: 0 6px 25px -6px hsl(var(--first-blue-deeper) / 0.2);
+    --shadow-warm: 0 4px 20px -4px hsl(var(--first-yellow-dark) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--first-blue) / 0.1);
 
     --radius: 0.5rem;
 
@@ -196,43 +196,43 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 25% 12%;
+    --foreground: 215 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 22% 15%;
+    --card-foreground: 215 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 22% 15%;
+    --popover-foreground: 215 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 215 25% 70%;
+    --primary-foreground: 220 25% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 18% 28%;
+    --secondary-foreground: 215 20% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 18% 22%;
+    --muted-foreground: 215 16% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 46 40% 55%;
+    --accent-foreground: 220 25% 12%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 215 20% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 215 18% 25%;
+    --input: 215 18% 25%;
+    --ring: 215 25% 70%;
 
     /* sidebar */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 215 20% 92%;
+    --sidebar-primary: 215 25% 70%;
+    --sidebar-primary-foreground: 220 25% 12%;
+    --sidebar-accent: 215 18% 22%;
+    --sidebar-accent-foreground: 215 20% 92%;
+    --sidebar-border: 215 18% 25%;
+    --sidebar-ring: 215 25% 70%;
   }
 }
 
@@ -282,6 +282,74 @@ body {
     transform: translateX(0);
   }
 }
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade-in-delay {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+@keyframes border-flow {
+  0% {
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  50% {
+    border-color: hsl(var(--accent) / 0.5);
+  }
+  100% {
+    border-color: hsl(var(--primary) / 0.3);
+  }
+}
 
 @layer utilities {
   .animate-float {
@@ -292,6 +360,51 @@ body {
   }
   .animate-slide-in-right {
     animation: slide-in-right 0.6s ease-out both;
+  }
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out both;
+  }
+  .animate-slide-in-up {
+    animation: slide-in-up 0.7s ease-out both;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out both;
+  }
+  .animate-fade-in-delay {
+    animation: fade-in-delay 0.8s ease-out both;
+  }
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--accent) / 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+  .animate-border-flow {
+    animation: border-flow 3s ease-in-out infinite;
+  }
+
+  /* Delays para animações sequenciais */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
   }
 
   /* Gradients como classes utilitárias */

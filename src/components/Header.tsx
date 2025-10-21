@@ -19,9 +19,10 @@ const Header = () => {
 
   const menuItems = [
     { name: "Home", href: "#home" },
+    { name: "Sobre", href: "#sobre" },
     { name: "Serviços", href: "#servicos" },
     { name: "Crédito", href: "#credito" },
-    { name: "Sobre", href: "#sobre" },
+    { name: "Depoimentos", href: "#depoimentos" },
     { name: "Contato", href: "#contato" },
   ];
 
@@ -38,53 +39,54 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isScrolled
-          ? "bg-background/20 backdrop-blur-xl border-b border-border/30 shadow-lg"
-          : "bg-background/95 backdrop-blur-sm border-b border-border"
+          ? "bg-background/95 backdrop-blur-xl border-b border-border/40 shadow-elegant"
+          : "bg-background/98 backdrop-blur-md border-b border-border/20"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center animate-fade-in">
             <Image
-              src="/Logo.png" // coloque o arquivo em /public/first-logo.png
+              src="/Logopng.png"
               alt="FIRST - Personal Banker & Financial Advisor"
-              width={160}
-              height={48}
+              width={700}
+              height={500}
               priority
-              className="h-10 lg:h-12 w-auto"
+              className="pt-2 h-30 lg:h40 w-auto transition-transform duration-300 hover:scale-105"
             />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((item) => (
+          <nav className="hidden lg:flex items-center space-x-1">
+            {menuItems.map((item, index) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group cursor-pointer"
+                className="px-4 py-2 text-foreground/80 hover:text-primary transition-all duration-300 font-medium relative group cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms` }}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-3/4 rounded-full" />
               </button>
             ))}
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:flex">
+          <div className="hidden lg:flex animate-slide-in-right">
             <Button
               onClick={() => scrollToSection("#contato")}
               variant="default"
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="bg-gradient-to-r from-accent to-accent/90 hover:from-accent/90 hover:to-accent text-accent-foreground font-semibold px-6 py-3 rounded-lg shadow-button hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer relative overflow-hidden group"
             >
-              Fale com Especialista
+              <span className="relative z-10">Fale com Especialista</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/90 to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 hover:bg-muted/50 rounded-lg transition-colors"
             onClick={() => setIsMenuOpen((v) => !v)}
             aria-label="Abrir/fechar menu"
             aria-expanded={isMenuOpen}
@@ -95,7 +97,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border animate-slide-in-up">
             <nav className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <button

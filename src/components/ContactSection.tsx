@@ -166,8 +166,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      description: "first.personal@gmail.com.br",
-      action: "mailto:first.personal@gmail.com.br",
+      description: "emerson.gonzaga@advisorfirst.com.br",
+      action: "mailto:emerson.gonzaga@advisorfirst.com.br",
     },
     {
       icon: MapPin,
@@ -178,7 +178,7 @@ const ContactSection = () => {
     {
       icon: Clock,
       title: "Horário",
-      description: "Seg-Sex: 8h às 18h",
+      description: "Seg-Sex: 9h às 17h",
       action: "",
     },
   ];
@@ -191,14 +191,13 @@ const ContactSection = () => {
             variant="outline"
             className="mb-4 px-4 py-2 text-sm font-medium"
           >
-            Entre em Contato
+            Contato
           </Badge>
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Fale com seu <span className="text-primary">Personal Banker</span>
+            Fale <span className="text-primary">Conosco</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Pronto para transformar as finanças da sua empresa? Entre em contato
-            conosco
+            Pronto para transformar as finanças? Entre em contato
           </p>
         </div>
 

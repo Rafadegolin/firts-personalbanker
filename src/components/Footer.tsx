@@ -9,9 +9,6 @@ import {
   MapPin,
   Linkedin,
   Instagram,
-  Youtube,
-  ArrowUp,
-  Building,
   Shield,
   FileText,
 } from "lucide-react";
@@ -51,82 +48,63 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-first-blue-dark to-first-blue text-primary-foreground">
+    <footer className="bg-gradient-to-br from-first-blue-dark to-first-blue text-white dark:from-first-blue-deeper dark:to-first-blue-dark">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+          {/* Company Info - Takes 2 columns on desktop */}
+          <div className="lg:col-span-2 space-y-6">
             <div>
               <Image
-                src="/Logo.png" // coloque em /public/first-logo.png
+                src="/Logopng.png"
                 alt="FIRST - Personal Banker & Financial Advisor"
-                width={200}
-                height={64}
+                width={240}
+                height={80}
                 priority
-                className="h-16 w-auto mb-6 brightness-0 invert"
+                className="h-20 w-auto mb-4"
               />
-              <p className="text-primary-foreground/80 leading-relaxed">
-                Sua boutique financeira especializada em soluções personalizadas
-                para empresas. 20 anos de experiência em bancos internacionais
-                ao seu serviço.
+              <p className="text-white/80 dark:text-white/90 leading-relaxed text-sm max-w-xs">
+                Seu Advisor Pessoal para as melhores soluções financeiras. 20
+                anos de experiência em bancos internacionais ao seu serviço.
               </p>
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/80">
-                  +55 (19) 99761-8780
+            <div className="space-y-2.5">
+              <a
+                href="tel:+5519997618780"
+                className="flex items-center space-x-2.5 text-white/80 dark:text-white/90 hover:text-accent transition-colors text-sm group"
+              >
+                <Phone className="w-4 h-4 text-accent flex-shrink-0" />
+                <span>+55 (19) 99761-8780</span>
+              </a>
+              <a
+                href="mailto:emerson.gonzaga@advisorfirst.com.br"
+                className="flex items-center space-x-2.5 text-white/80 dark:text-white/90 hover:text-accent transition-colors text-sm group"
+              >
+                <Mail className="w-4 h-4 text-accent flex-shrink-0" />
+                <span className="break-all">
+                  emerson.gonzaga@advisorfirst.com.br
                 </span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/80">
-                  first.personal@gmail.com.br
-                </span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/80">
-                  Mogi Guaçu, SP - Brasil
-                </span>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">
-                Redes Sociais
-              </h4>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    aria-label={social.label}
-                    className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110"
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
+              </a>
+              <div className="flex items-center space-x-2.5 text-white/80 dark:text-white/90 text-sm">
+                <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+                <span>Mogi Guaçu, SP - Brasil</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-primary-foreground mb-6 text-lg">
+            <h4 className="font-semibold text-white mb-5 text-base">
               Serviços
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {footerLinks.services.map((service) => (
                 <li key={service}>
                   <a
-                    href="#servicos" // ⚠️ sem acento para casar com id="servicos"
-                    className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                    href="#servicos"
+                    className="text-white/80 dark:text-white/90 hover:text-accent transition-colors text-sm inline-block"
                   >
                     {service}
                   </a>
@@ -137,15 +115,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-primary-foreground mb-6 text-lg">
-              Empresa
-            </h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-5 text-base">Empresa</h4>
+            <ul className="space-y-2.5">
               {footerLinks.company.map((item) => (
                 <li key={item}>
                   <a
                     href="#sobre"
-                    className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-white/80 dark:text-white/90 hover:text-accent transition-colors text-sm inline-block"
                   >
                     {item}
                   </a>
@@ -154,69 +130,79 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal & Newsletter */}
-          <div className="space-y-8">
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-6 text-lg">
-                Legal
-              </h4>
-              <ul className="space-y-3">
-                {footerLinks.legal.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="/politica-de-privacidade"
-                      className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {/* Legal */}
+          <div>
+            <h4 className="font-semibold text-white mb-5 text-base">Legal</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.legal.map((item) => (
+                <li key={item}>
+                  <a
+                    href="/politica-de-privacidade"
+                    className="text-white/80 dark:text-white/90 hover:text-accent transition-colors text-sm inline-block"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact/Social */}
+          <div>
+            <h4 className="font-semibold text-white mb-5 text-base">
+              Conecte-se
+            </h4>
+            <div className="flex space-x-3 mb-6">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="p-2.5 bg-white/10 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110"
+                >
+                  <social.icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+
+            <div className="space-y-2 text-xs text-white/70 dark:text-white/80">
+              <div className="flex items-center space-x-1.5">
+                <Shield className="w-3.5 h-3.5 text-accent" />
+                <span>SSL Seguro</span>
+              </div>
+              <div className="flex items-center space-x-1.5">
+                <Shield className="w-3.5 h-3.5 text-accent" />
+                <span>LGPD Compliance</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Separator */}
-      <Separator className="bg-primary-foreground/20" />
+      <Separator className="bg-white/10" />
 
       {/* Bottom Section */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
-          {/* Company Details */}
-          <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8 text-center lg:text-left">
-            <div className="flex items-center space-x-2">
-              <Building className="w-5 h-5 text-accent" />
-              <span className="text-primary-foreground/80 text-sm">
-                FIRST SERVIÇOS ESPECIALIZADOS LTDA
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <FileText className="w-5 h-5 text-accent" />
-              <span className="text-primary-foreground/80 text-sm">
-                CNPJ: 00.000.000/0001-00
-              </span>
-            </div>
+      <div className="container mx-auto px-4 py-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          {/* Copyright */}
+          <div className="text-white/70 dark:text-white/80 text-xs">
+            © 2025 FIRST SERVICOS E NEGOCIOS ESPECIALIZADOS LTDA. Todos os
+            direitos reservados.
           </div>
 
-          {/* Copyright & Scroll to Top */}
-          <div className="flex items-center space-x-6">
-            <div className="text-center">
-              <p className="text-primary-foreground/80 text-sm">
-                © 2025 FIRST. Todos os direitos reservados.
-              </p>
-              <div className="flex items-center justify-center space-x-4 mt-2">
-                <div className="flex items-center space-x-1">
-                  <Shield className="w-4 h-4 text-accent" />
-                  <span className="text-primary-foreground/60 text-xs">
-                    SSL Seguro
-                  </span>
-                </div>
-                <div className="text-primary-foreground/60 text-xs">•</div>
-                <span className="text-primary-foreground/60 text-xs">
-                  LGPD Compliance
-                </span>
-              </div>
+          {/* Company Details */}
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-white/70 dark:text-white/80">
+            <div className="flex items-center space-x-1.5">
+              <FileText className="w-3.5 h-3.5 text-accent" />
+              <span>CNPJ: 59.715.892/0001-50</span>
+            </div>
+            <span className="hidden md:inline">•</span>
+            <div className="flex items-center space-x-1.5">
+              <MapPin className="w-3.5 h-3.5 text-accent" />
+              <span>Mogi Guaçu, SP</span>
             </div>
           </div>
         </div>

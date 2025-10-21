@@ -67,7 +67,8 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      className="py-20 bg-gradient-to-br from-primary/5 to-accent/5"
+      id="depoimentos"
+      className="py-20 bg-gradient-to-br from-muted/20 via-background to-muted/20"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -93,8 +94,8 @@ const TestimonialsSection = () => {
         <div className="max-w-4xl mx-auto mb-12 animate-fade-in">
           <Card className="relative overflow-hidden border border-primary/20 shadow-2xl">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent" />
-            <CardContent className="p-8 lg:p-12">
-              <div className="flex flex-col items-center text-center">
+            <CardContent className="p-8 lg:p-12 h-[600px] lg:h-[520px] flex items-center">
+              <div className="flex flex-col items-center text-center w-full">
                 {/* Quote icon */}
                 <div className="mb-6">
                   <Quote className="w-16 h-16 text-primary/20" />
@@ -206,7 +207,7 @@ const TestimonialsSection = () => {
               onClick={() => setCurrent(index)}
               aria-label={`Ver depoimento de ${t.name}`}
             >
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-6 text-center h-[180px] flex flex-col items-center justify-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <span className="text-primary font-bold">
                     {t.name.charAt(0)}

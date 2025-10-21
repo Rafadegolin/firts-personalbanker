@@ -184,10 +184,6 @@ const TermosUso = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <span className="text-muted-foreground">Jurídico</span>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
                 <BreadcrumbPage className="text-foreground">
                   Termos de Uso
                 </BreadcrumbPage>
@@ -208,7 +204,7 @@ const TermosUso = () => {
                 Condições gerais para utilização de nossos serviços e plataforma
               </p>
               <p className="text-foreground/60 text-sm">
-                Última atualização: 16 de setembro de 2024
+                Última atualização: 20 de outubro de 2025
               </p>
             </div>
             {/* Botões removidos */}
@@ -226,15 +222,17 @@ const TermosUso = () => {
             <LegalSection id="aceite" title="Aceite dos Termos">
               <LegalCallout type="warning">
                 <strong>Importante:</strong> Ao acessar e utilizar os serviços
-                da FIRST Personal Banker Empresarial, você declara ter lido,
-                compreendido e concordado integralmente com estes Termos de Uso.
+                da FIRST SERVICOS E NEGOCIOS ESPECIALIZADOS LTDA, você declara
+                ter lido, compreendido e concordado integralmente com estes
+                Termos de Uso.
               </LegalCallout>
 
               <p className="mt-4 leading-relaxed">
                 Estes termos constituem um acordo legal vinculante entre você
-                (usuário) e a<strong> FIRST Personal Banker Empresarial</strong>
-                . Se você não concorda com qualquer disposição destes termos,
-                não deve utilizar nossos serviços.
+                (usuário) e a{" "}
+                <strong>FIRST SERVICOS E NEGOCIOS ESPECIALIZADOS LTDA</strong>.
+                Se você não concorda com qualquer disposição destes termos, não
+                deve utilizar nossos serviços.
               </p>
             </LegalSection>
 
@@ -561,18 +559,23 @@ const TermosUso = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">E-mail</p>
-                    <p className="font-medium">juridico@first-pb.com.br</p>
+                    <p className="font-medium">
+                      emerson.gonzaga@advisorfirst.com.br
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">
                       Telefone
                     </p>
-                    <p className="font-medium">+55 (11) XXXX-XXXX</p>
+                    <p className="font-medium">+55 (19) 99761-8780</p>
                   </div>
                 </div>
                 <div className="mt-4">
                   <p className="text-sm text-muted-foreground mb-2">Endereço</p>
-                  <p className="font-medium">[Endereço Completo da Sede]</p>
+                  <p className="font-medium">Mogi Guaçu, SP - Brasil</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    CNPJ: 59.715.892/0001-50
+                  </p>
                 </div>
               </div>
             </LegalSection>
@@ -662,7 +665,7 @@ const TermosUso = () => {
                 </a>
                 <span>•</span>
                 <a
-                  href="mailto:juridico@first-pb.com.br"
+                  href="mailto:emerson.gonzaga@advisorfirst.com.br"
                   className="hover:text-primary transition-colors"
                 >
                   Jurídico

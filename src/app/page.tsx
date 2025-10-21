@@ -7,8 +7,10 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import CreditSolutionsSection from "@/components/CreditSolutionsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import VideoTestimonialSection from "@/components/VideoTestimonialSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Page() {
   return (
@@ -22,9 +24,11 @@ export default function Page() {
         <ServicesSection />
         <CreditSolutionsSection />
         <TestimonialsSection />
+        <VideoTestimonialSection />
         <ContactSection />
       </main>
       <Footer />
+      <ThemeToggle />
     </div>
   );
 }
