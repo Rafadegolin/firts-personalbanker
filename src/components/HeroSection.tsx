@@ -122,7 +122,7 @@ const HeroSection = () => {
                   <div className="relative">
                     <div className="relative w-32 h-32 lg:w-40 lg:h-40 ring-4 ring-accent/20 rounded-full group-hover:ring-accent/40 transition-all duration-500">
                       <Image
-                        src="/foto1.jpg"
+                        src="/Foto1.jpg"
                         alt="Foto Emerson Gonzaga"
                         fill
                         className="rounded-full object-cover object-top"
