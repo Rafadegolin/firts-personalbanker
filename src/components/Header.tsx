@@ -44,17 +44,28 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center animate-fade-in">
-            <Image
-              src="/Logopng.png"
-              alt="FIRST - Personal Banker & Financial Advisor"
-              width={700}
-              height={500}
-              priority
-              className="pt-2 h-30 lg:h40 w-auto transition-transform duration-300 hover:scale-105"
-            />
+        <div className="flex items-center justify-between h-24 lg:h-28">
+          {/* Logo - Destacado */}
+          <div
+            className="flex items-center animate-fade-in group cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <div className="relative">
+              {/* Glow effect sutil */}
+              <div className="absolute inset-0 bg-gradient-to-r from-first-blue/20 to-first-yellow/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Image
+                src="/Logopng.png"
+                alt="FIRST - Personal Banker & Financial Advisor"
+                width={700}
+                height={500}
+                priority
+                className={`relative h-30 lg:h-42 pt-2 w-auto transition-all duration-500 ${
+                  isScrolled
+                    ? "lg:h-20 group-hover:scale-105"
+                    : "group-hover:scale-110 drop-shadow-lg"
+                }`}
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}

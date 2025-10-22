@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ClientToaster from "@/components/ClientToaster";
 import { Montserrat } from "next/font/google";
+// @ts-ignore: side-effect import of global CSS without type declarations
 import "./globals.css";
 
 const montserrat = Montserrat({

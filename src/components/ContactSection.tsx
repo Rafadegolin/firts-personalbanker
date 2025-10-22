@@ -131,7 +131,7 @@ const ContactSection = () => {
 
       setIsSubmitted(true);
       toast.success("Mensagem enviada com sucesso!", {
-        description: "Entraremos em contato em até 24 horas.",
+        description: "Entraremos em contato em breve!",
       });
 
       setFormData({
@@ -258,8 +258,7 @@ const ContactSection = () => {
                   Solicitar Consultoria Gratuita
                 </CardTitle>
                 <p className="text-muted-foreground">
-                  Preencha o formulário e nossa equipe entrará em contato em até
-                  24 horas
+                  Preencha o formulário e nossa equipe entrará em contato
                 </p>
               </CardHeader>
 
@@ -277,7 +276,7 @@ const ContactSection = () => {
                     <Button
                       onClick={() => setIsSubmitted(false)}
                       variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      className="cursor-pointer border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     >
                       Enviar Nova Mensagem
                     </Button>
@@ -429,7 +428,7 @@ const ContactSection = () => {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>

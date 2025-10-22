@@ -65,11 +65,7 @@ const AboutSection = () => {
                 First Serviços Especializados é liderada por Emerson Gonzaga,
                 profissional com sólida formação acadêmica com MBAs em Gestão
                 Empresarial (FGV), Finanças e Banking (UNIP) e Agronegócios
-                (USP/ESALQ) e Especialista em Investimentos (ANBIMA-CEA). Ao
-                longo de minha carreira, tive a oportunidade de atuar em
-                instituições renomadas, como o Banco Santander e o Banco Safra,
-                onde desenvolvi habilidades essenciais para oferecer um
-                atendimento personalizado e de excelência.
+                (USP/ESALQ) e Especialista em Investimentos (ANBIMA-CEA).
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Na First, valorizamos a individualidade de cada cliente e
