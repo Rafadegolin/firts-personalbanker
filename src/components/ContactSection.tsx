@@ -159,9 +159,9 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Telefone",
+      title: "Telefone / WhatsApp",
       description: "+55 (19) 99761-8780",
-      action: "tel:+5519997618780",
+      action: "https://wa.me/5519997618780?text=Gostaria%20de%20saber%20mais!",
     },
     {
       icon: Mail,
@@ -221,6 +221,8 @@ const ContactSection = () => {
                         {info.action ? (
                           <a
                             href={info.action}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-muted-foreground hover:text-primary transition-colors"
                           >
                             {info.description}

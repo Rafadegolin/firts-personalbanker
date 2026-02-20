@@ -50,7 +50,7 @@ const VideoTestimonialSection = () => {
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
               >
-                <source src="/depoimento_mock.mp4" type="video/mp4" />
+                <source src="/depoimento.mp4" type="video/mp4" />
                 Seu navegador não suporta a reprodução de vídeos.
               </video>
 
@@ -60,7 +60,7 @@ const VideoTestimonialSection = () => {
                   <button
                     onClick={() => {
                       const video = document.getElementById(
-                        "testimonial-video"
+                        "testimonial-video",
                       ) as HTMLVideoElement;
                       if (video) {
                         video.play();

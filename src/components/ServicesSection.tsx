@@ -58,12 +58,13 @@ const ServicesSection = () => {
       title: "Outras Soluções",
       description: "Parcerias estratégicas que podem melhorar seu negócio.",
       features: [
-        "Fundo para Crédito Internacional.",
+        "Agente de Crédito Internacional Empresarial.",
         "Revisão de Recuperação Tributária dos últimos 5 anos.",
         "Assessoria para Planejamento Sucessório e Holding Familiar.",
         "Seguros de todos os tipos * Opções Resgatáveis (Vida).",
         "Valuation.",
         "Consultoria Especializada em Agronegócios (Para produtores e Empresas da Cadeia Agro).",
+        "Gestor Comercial de Crédito Imobiliário em Portugal.",
       ],
       color: "from-emerald/15 to-first-blue/10",
       badge: "Completo",
@@ -125,10 +126,10 @@ const ServicesSection = () => {
                     index === 0
                       ? "success"
                       : index === 1
-                      ? "accent"
-                      : index === 2
-                      ? "premium"
-                      : "info"
+                        ? "accent"
+                        : index === 2
+                          ? "premium"
+                          : "info"
                   }
                   className="hover:scale-110 transition-transform"
                 >
