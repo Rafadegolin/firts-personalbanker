@@ -1,34 +1,35 @@
-// app/page.tsx
-"use client";
+import { RevealObserver } from "@/components/brand/RevealObserver";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { About } from "@/components/sections/About";
+import { Contact } from "@/components/sections/Contact";
+import { Credit } from "@/components/sections/Credit";
+import { Hero } from "@/components/sections/Hero";
+import { International } from "@/components/sections/International";
+import { Manifesto } from "@/components/sections/Manifesto";
+import { Mentoria } from "@/components/sections/Mentoria";
+import { Numbers } from "@/components/sections/Numbers";
+import { Solutions } from "@/components/sections/Solutions";
+import { Testimonials } from "@/components/sections/Testimonials";
 
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
-import CreditSolutionsSection from "@/components/CreditSolutionsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import VideoTestimonialSection from "@/components/VideoTestimonialSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
-
-export default function Page() {
+export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <>
       <Header />
       <main>
-        <div id="home">
-          <HeroSection />
-        </div>
-        <AboutSection />
-        <ServicesSection />
-        <CreditSolutionsSection />
-        <TestimonialsSection />
-        <VideoTestimonialSection />
-        <ContactSection />
+        <Hero />
+        <Numbers />
+        <Manifesto />
+        <About />
+        <Mentoria />
+        <Solutions />
+        <Credit />
+        <International />
+        <Testimonials />
+        <Contact />
       </main>
       <Footer />
-      <ThemeToggle />
-    </div>
+      <RevealObserver />
+    </>
   );
 }
