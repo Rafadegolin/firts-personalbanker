@@ -1,5 +1,6 @@
 // src/app/api/contact/route.ts
 import { NextResponse } from "next/server";
+import { site } from "@/config/site";
 import { validateContactForm } from "@/lib/validation";
 import {
   validateCSRFTokenServer,
@@ -23,8 +24,8 @@ export async function POST(req: Request) {
 
     // 2) Honeypot (silencia bots)
     if (!validateHoneypotServer(honeypot)) {
-      // 204: no content (finge que deu tudo certo)
-      return NextResponse.json({ ok: true }, { status: 204 });
+      // 204: no content (finge que deu tudo certo). Resposta 204 não pode ter corpo.
+      return new NextResponse(null, { status: 204 });
     }
 
     // 3) Rate limit simples (DEV)
@@ -54,8 +55,8 @@ export async function POST(req: Request) {
     const resp = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      // envie o body original (com csrf/honeypot, timestamp, etc.)
-      body: JSON.stringify(body),
+      // envie o body original (com csrf/honeypot, timestamp, etc.) + origem do lead
+      body: JSON.stringify({ ...body, source: site.leadSource }),
       // garante que não cacheia e evita edge bugs
       cache: "no-store",
     });

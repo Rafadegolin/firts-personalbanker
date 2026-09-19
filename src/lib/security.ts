@@ -8,7 +8,9 @@ export function setCSRFToken(): string {
   const token = Array.from(arr)
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
-  document.cookie = `${CSRF_COOKIE}=${token}; Path=/; SameSite=Lax; Secure`;
+  // `Secure` só em HTTPS: em http (Safari, testes via IP da rede) o cookie seria descartado
+  const secure = location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `${CSRF_COOKIE}=${token}; Path=/; SameSite=Lax${secure}`;
   return token;
 }
 
