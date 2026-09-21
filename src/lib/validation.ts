@@ -1,18 +1,11 @@
 // lib/validation.ts
 import { z } from "zod";
+import { contact } from "@/content/contact";
 
 export const ContactSchema = z.object({
-  name: z.string().min(2, "Nome muito curto"),
-  email: z.string().email("Email inválido"),
-  phone: z.string().min(8, "Telefone inválido"),
-  company: z.string().max(120).optional().or(z.literal("")),
-  service: z.string().max(120).optional().or(z.literal("")),
-  message: z
-    .string()
-    .min(10, "Mensagem muito curta")
-    .max(1000, "Máximo 1000 caracteres"),
-  honeypot: z.string().max(0).optional().or(z.literal("")),
-  csrfToken: z.string().min(16, "Token ausente"),
+  name: z.string().trim().min(2, "Nome muito curto"),
+  revenue: z.enum(contact.revenueRanges, "Selecione o faturamento anual"),
+  service: z.enum(contact.needs, "Selecione a sua necessidade"),
 });
 
 export type ContactFormData = z.infer<typeof ContactSchema>;

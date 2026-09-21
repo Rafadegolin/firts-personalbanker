@@ -131,7 +131,7 @@ export default function PoliticaDePrivacidadePage() {
           items={[
             <>
               <strong>Essenciais:</strong> necessários para o funcionamento
-              básico do site, como a proteção do formulário de contato.
+              básico do site.
             </>,
             <>
               <strong>Analíticos:</strong> para entender como você usa nosso

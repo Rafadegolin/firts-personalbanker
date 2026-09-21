@@ -18,7 +18,7 @@ npm run brand:logo  # regenerate emblem SVG paths, icons and OG image from docs/
 npm run brand:map   # regenerate the dotted Atlantic map (Brasil ↔ Portugal)
 ```
 
-There is no test suite and no linter. Required env var in `.env.local`: `N8N_WEBHOOK_URL` (contact form destination).
+There is no test suite and no linter. No env vars are required.
 
 ## Architecture
 
@@ -43,8 +43,8 @@ There is no test suite and no linter. Required env var in `.env.local`: `N8N_WEB
 
 ### Contact form flow
 
-`ContactForm` → `POST /api/contact` (`src/app/api/contact/route.ts`) → n8n webhook.
+There is no backend: `ContactForm` validates with Zod (`src/lib/validation.ts`), builds a pre-filled message (greeting from `content/contact.ts` + one `*Label:* value` line per field) and opens `whatsappLink(message)` (`src/config/site.ts`, `wa.me`) in a new tab.
 
-- Client (`src/lib/security.ts`): double-submit CSRF cookie `csrfToken` (`Secure` only on HTTPS), honeypot field, localStorage rate limit, `<>` escaping.
-- Server (`src/lib/server/security.ts`): CSRF match → honeypot (fake `204`) → in-memory per-IP rate limit → Zod (`src/lib/validation.ts`, shared) → forwards the body plus `source: site.leadSource` to n8n.
-- Changing form fields means updating `ContactSchema`, `ContactForm` and the n8n workflow.
+- Fields: name, annual revenue (`contact.revenueRanges`) and need (`contact.needs`); the selects are validated with `z.enum` against those lists. The lead's phone number comes from the WhatsApp conversation itself.
+- Keep the submit handler synchronous — `window.open` must run inside the click or the browser blocks it as a pop-up. The confirmation panel links to the same URL as a fallback.
+- Changing form fields means updating `ContactSchema`, `ContactForm` (fields and message lines) and `content/contact.ts`.

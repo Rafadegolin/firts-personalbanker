@@ -3,6 +3,10 @@
 
 const phone = "5519997618780";
 
+// Abre uma conversa no WhatsApp com a mensagem já preenchida.
+export const whatsappLink = (text: string) =>
+  `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
 export const site = {
   name: "EG Capital Hub",
   descriptor: "Hub Especializado",
@@ -22,9 +26,9 @@ export const site = {
   contact: {
     phoneDisplay: "+55 (19) 99761-8780",
     phoneHref: `tel:+${phone}`,
-    whatsappHref: `https://wa.me/${phone}?text=${encodeURIComponent(
+    whatsappHref: whatsappLink(
       "Olá! Gostaria de agendar uma conversa com a EG Capital Hub."
-    )}`,
+    ),
     email: "emerson.gonzaga@egcapitalhub.com.br",
     city: "Mogi Guaçu, SP",
     country: "Brasil",
@@ -44,9 +48,6 @@ export const site = {
     updatedAt: "19 de setembro de 2026",
     version: "2.0",
   },
-
-  // Identifica a origem dos leads no fluxo do n8n.
-  leadSource: "egcapitalhub-site",
 } as const;
 
 export const nav = [

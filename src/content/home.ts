@@ -2,11 +2,8 @@ import { site } from "@/config/site";
 
 export const hero = {
   eyebrow: `${site.descriptor} · ${site.regions}`,
-  // Opção 2 do briefing (hero)
-  headline:
-    "Seu projeto merece mais do que as portas que o mercado brasileiro convencional costuma abrir.",
-  headlineEmphasis:
-    "Merece as melhores oportunidades — onde quer que elas estejam.",
+  headline: "Reduza o custo do seu crédito empresarial",
+  headlineEmphasis: "com quem passou 20 anos dentro dos bancos.",
   // Opção A do briefing (slogan)
   subheadline: site.slogan,
   secondaryCta: { label: "Conhecer as soluções", href: "/#solucoes" },

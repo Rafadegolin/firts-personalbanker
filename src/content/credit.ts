@@ -25,7 +25,7 @@ export const creditGroups = [
       },
       {
         title: "Comissárias",
-        text: "Parcerias com comissárias para soluções de crédito especializadas.",
+        text: "Parcerias estratégicas para soluções de crédito especializadas.",
       },
     ],
   },

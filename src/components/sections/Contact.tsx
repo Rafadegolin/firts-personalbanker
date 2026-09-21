@@ -124,7 +124,11 @@ export function Contact() {
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 {contact.formSubtitle}
               </p>
-              <ContactForm interests={contact.interests} />
+              <ContactForm
+                greeting={contact.whatsappGreeting}
+                needs={contact.needs}
+                revenueRanges={contact.revenueRanges}
+              />
             </div>
           </div>
         </div>
