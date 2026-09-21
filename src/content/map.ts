@@ -6,11 +6,11 @@ export const MAP_PINS = {
   "br": {
     "x": 29.5,
     "y": 57.16,
-    "label": "Mogi Guaçu · Brasil"
+    "label": "Brasil"
   },
   "pt": {
     "x": 50.5,
     "y": 20.78,
-    "label": "Lisboa · Portugal"
+    "label": "Portugal"
   }
 } as const;

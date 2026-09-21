@@ -31,7 +31,7 @@ export function AtlanticMap() {
       <svg
         viewBox={MAP_VIEWBOX}
         role="img"
-        aria-label="Mapa do Atlântico com a conexão entre Mogi Guaçu, no Brasil, e Lisboa, em Portugal"
+        aria-label="Mapa do Atlântico com a conexão entre o Brasil e Portugal"
         className="absolute inset-0 h-full w-full overflow-visible"
       >
         <defs>

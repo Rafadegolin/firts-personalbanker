@@ -8,8 +8,8 @@ import DottedMap from "dotted-map";
 import { writeFile } from "node:fs/promises";
 
 const PLACES = {
-  br: { lat: -22.37, lng: -46.94, label: "Mogi Guaçu · Brasil" },
-  pt: { lat: 38.72, lng: -9.14, label: "Lisboa · Portugal" },
+  br: { lat: -22.37, lng: -46.94, label: "Brasil" },
+  pt: { lat: 38.72, lng: -9.14, label: "Portugal" },
 };
 
 const map = new DottedMap({

@@ -13,7 +13,7 @@ export const site = {
 
   founder: {
     name: "Emerson Gonzaga",
-    role: "Fundador & CEO",
+    role: "Fundador",
     // Hífen inquebrável (U+2011) para "C‑PRO" não quebrar entre linhas
     certifications: "C‑PRO R e C‑PRO I ANBIMA",
     education: "MBAs FGV · UNIP · USP/ESALQ",
