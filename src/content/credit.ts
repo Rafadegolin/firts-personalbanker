@@ -20,7 +20,7 @@ export const creditGroups = [
         text: "Antecipação de pagamentos de clientes para melhorar o fluxo de caixa.",
       },
       {
-        title: "Domicílio via Escrow Account e Comissárias",
+        title: "Domicílio via Escrow Account",
         text: "Soluções customizadas para vendas sem boletos.",
       },
       {
